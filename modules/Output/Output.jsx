@@ -8,7 +8,9 @@ const Output = () => {
 
   return (
     <div className={styles["body"]}>
-      <div className={styles["heading"]}>UNPLANNED LIFE</div>
+      <div className={styles["heading"]}>
+        UNPLANNED LIFE (Emergency Fund, Health & Life insurance)
+      </div>
       <div className={styles["flexbox"]}>
         <UserContent label="Fixed Deposits" value={outputObject.fd} />
         <UserContent label="Saving Deposits" value={outputObject.saving} />
@@ -22,20 +24,22 @@ const Output = () => {
           value={outputObject.lifeInsurance}
         />
       </div>
-      <div className={styles["heading"]}>PRESENT LIFE</div>
+      <div className={styles["heading"]}>
+        PRESENT LIFE (Monthly expenditure)
+      </div>
       <div className={styles["flexbox"]}>
         <UserContent label="Needs" value={outputObject.needs} />
         <UserContent label="Desires" value={outputObject.desires} />
       </div>
-      <div className={styles["heading"]}>PLANNED LIFE</div>
+      <div className={styles["heading"]}>PLANNED LIFE (Monthly Investments)</div>
       <div className={styles["flexbox"]}>
         <UserContent
-          label="Safe Instruments"
+          label="Safe Instruments(Bonds, EPF, Gold etc.)"
           value={outputObject.safeInstruments}
         />
-        <UserContent label="Index Fund" value={outputObject.indexFund} />
-        <UserContent label="Mid Cap" value={outputObject.midCap} />
-        <UserContent label="Small Cap" value={outputObject.smallCap} />
+        <UserContent label="Index Fund (Nifty/Sensex)" value={outputObject.indexFund} />
+        <UserContent label="Mid Cap Index Fund" value={outputObject.midCap} />
+        <UserContent label="Small Cap Index Fund" value={outputObject.smallCap} />
       </div>
     </div>
   );
