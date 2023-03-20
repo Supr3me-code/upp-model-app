@@ -1,0 +1,9 @@
+.body {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #d2d342;
+  height: 80px;
+  padding: 0 20px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
