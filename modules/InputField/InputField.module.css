@@ -14,11 +14,15 @@
   transition: all 0.3s ease-in-out;
 }
 
+.input-field {
+  border: 1px rgb(39, 126, 85) solid;
+}
+
 .input-field:focus {
   outline: none;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .input-body {
-    margin: 20px;
+    margin: 20px;    
 }
