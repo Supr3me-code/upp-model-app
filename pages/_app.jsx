@@ -1,4 +1,3 @@
-import "../styles/globals.css";
 import Header from "../modules/Header/Header";
 import Footer from "../modules/Footer/Footer";
 import { createContext, useEffect, useRef, useState } from "react";
