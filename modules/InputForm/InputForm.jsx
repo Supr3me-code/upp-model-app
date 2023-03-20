@@ -5,7 +5,8 @@ import InputField from "../InputField/InputField";
 import styles from "./InputForm.module.css";
 
 const InputForm = () => {
-  const {income, age, setAge, setIncome} = useContext(AppContext);
+  const { income, age, setAge, setIncome, outputObject, setOutputObject } =
+    useContext(AppContext);
 
   const [tempIncome, setTempIncome] = useState();
   const [tempAge, setTempAge] = useState();
@@ -13,9 +14,22 @@ const InputForm = () => {
   const submitHandler = (event) => {
     event.preventDefault();
     setIncome(tempIncome);
-    setAge(tempAge)
+    setAge(tempAge);
     console.log(income, "INCOME");
     console.log(age, "AGE");
+    setOutputObject({
+      fd: (0.7*6*tempIncome).toFixed(1),
+      saving: (0.2*6*tempIncome).toFixed(1),
+      cash: (0.1*6*tempIncome).toFixed(1),
+      healthInsurance: (6*tempIncome).toFixed(1),
+      lifeInsurance: (20*12*tempIncome).toFixed(1),
+      needs: (0.5*tempIncome).toFixed(1),
+      desires: (0.3*tempIncome).toFixed(1),
+      safeInstruments: ((tempAge/100)*(0.2*tempIncome)).toFixed(1),
+      indexFund: ((1 - (tempAge/100))*(0.2*0.6*tempIncome)).toFixed(1),
+      midCap: ((1 - (tempAge/100))*(0.2*0.25*tempIncome)).toFixed(1),
+      smallCap: ((1 - (tempAge/100))*(0.2*0.15*tempIncome)).toFixed(1),
+    })
   };
 
   const resetHandler = () => {
