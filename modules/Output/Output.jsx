@@ -4,29 +4,38 @@ import UserContent from "../UserContent/UserContent";
 import styles from "./Output.module.css";
 
 const Output = () => {
-  const { income, age } = useContext(AppContext);
+  const { income, age, outputObject } = useContext(AppContext);
 
   return (
-    <div className={styles['body']}>
-      UNPLANNED LIFE
+    <div className={styles["body"]}>
+      <div className={styles["heading"]}>UNPLANNED LIFE</div>
       <div className={styles["flexbox"]}>
-        <UserContent label="Fixed Deposits" value={income} />
-        <UserContent label="Saving Deposits" value={age} />
-        <UserContent label="Cash" value={5084} />
-        <UserContent label="Health Insurance" value={5084} />
-        <UserContent label="Life Insurance" value={5084} />
+        <UserContent label="Fixed Deposits" value={outputObject.fd} />
+        <UserContent label="Saving Deposits" value={outputObject.saving} />
+        <UserContent label="Cash" value={outputObject.cash} />
+        <UserContent
+          label="Health Insurance"
+          value={outputObject.healthInsurance}
+        />
+        <UserContent
+          label="Life Insurance"
+          value={outputObject.lifeInsurance}
+        />
       </div>
-      PRESENT LIFE
+      <div className={styles["heading"]}>PRESENT LIFE</div>
       <div className={styles["flexbox"]}>
-        <UserContent label="Needs" value={5084} />
-        <UserContent label="Desires" value={5084} />
+        <UserContent label="Needs" value={outputObject.needs} />
+        <UserContent label="Desires" value={outputObject.desires} />
       </div>
-      PLANNED LIFE
+      <div className={styles["heading"]}>PLANNED LIFE</div>
       <div className={styles["flexbox"]}>
-        <UserContent label="Safe Instruments" value={5084} />
-        <UserContent label="Index Fund" value={5084} />
-        <UserContent label="Mid Cap" value={5084} />
-        <UserContent label="Small Cap" value={5084} />
+        <UserContent
+          label="Safe Instruments"
+          value={outputObject.safeInstruments}
+        />
+        <UserContent label="Index Fund" value={outputObject.indexFund} />
+        <UserContent label="Mid Cap" value={outputObject.midCap} />
+        <UserContent label="Small Cap" value={outputObject.smallCap} />
       </div>
     </div>
   );

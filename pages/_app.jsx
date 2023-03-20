@@ -10,8 +10,24 @@ export const AppContext = createContext();
 function MyApp() {
   const [income, setIncome] = useState();
   const [age, setAge] = useState();
+  const outputObject = {
+    fd: 0,
+    saving: 0,
+    cash: 0,
+    healthInsurance: 0,
+    lifeInsurance: 0,
+    needs: 0,
+    desires: 0,
+    safeInstruments: 0,
+    indexFund: 0,
+    midCap: 0,
+    smallCap: 0,
+  };
+
   return (
-    <AppContext.Provider value={{income, setIncome, age, setAge}}>
+    <AppContext.Provider
+      value={{ income, setIncome, age, setAge, outputObject }}
+    >
       <Header />
       <InputForm />
       <Output />

@@ -4,6 +4,11 @@
   justify-content: space-around;
 }
 
+.heading {
+  color: red;
+  margin-left: 10px;
+}
+
 @media screen and (max-width: 580px) {
   .flexbox {
     flex-direction: column;
