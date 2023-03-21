@@ -11,6 +11,8 @@ const InputForm = () => {
   const [tempIncome, setTempIncome] = useState();
   const [tempAge, setTempAge] = useState();
 
+  const numFor = Intl.NumberFormat('en-IN');
+
   const submitHandler = (event) => {
     event.preventDefault();
     setIncome(tempIncome);
@@ -18,17 +20,17 @@ const InputForm = () => {
     console.log(income, "INCOME");
     console.log(age, "AGE");
     setOutputObject({
-      fd: (0.7*6*tempIncome).toFixed(1),
-      saving: (0.2*6*tempIncome).toFixed(1),
-      cash: (0.1*6*tempIncome).toFixed(1),
-      healthInsurance: (6*tempIncome).toFixed(1),
-      lifeInsurance: (20*12*tempIncome).toFixed(1),
-      needs: (0.5*tempIncome).toFixed(1),
-      desires: (0.3*tempIncome).toFixed(1),
-      safeInstruments: ((tempAge/100)*(0.2*tempIncome)).toFixed(1),
-      indexFund: ((1 - (tempAge/100))*(0.2*0.6*tempIncome)).toFixed(1),
-      midCap: ((1 - (tempAge/100))*(0.2*0.25*tempIncome)).toFixed(1),
-      smallCap: ((1 - (tempAge/100))*(0.2*0.15*tempIncome)).toFixed(1),
+      fd: numFor.format((0.7*6*tempIncome).toFixed(1)),
+      saving: numFor.format((0.2*6*tempIncome).toFixed(1)),
+      cash: numFor.format((0.1*6*tempIncome).toFixed(1)),
+      healthInsurance: numFor.format((6*tempIncome).toFixed(1)),
+      lifeInsurance: numFor.format((20*12*tempIncome).toFixed(1)),
+      needs: numFor.format((0.5*tempIncome).toFixed(1)),
+      desires: numFor.format((0.3*tempIncome).toFixed(1)),
+      safeInstruments: numFor.format(((tempAge/100)*(0.2*tempIncome)).toFixed(1)),
+      indexFund: numFor.format(((1 - (tempAge/100))*(0.2*0.6*tempIncome)).toFixed(1)),
+      midCap: numFor.format(((1 - (tempAge/100))*(0.2*0.25*tempIncome)).toFixed(1)),
+      smallCap: numFor.format(((1 - (tempAge/100))*(0.2*0.15*tempIncome)).toFixed(1)),
     })
   };
 
